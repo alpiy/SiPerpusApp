@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="hijau">#88AB8E</color>
+    <color name="hijaumuda">#AFC8AD</color>
+    <color name="orenmuda">#EEE7DA</color>
+    <color name="grey">#D9D9D9</color>
+    <color name="putih">#F2F1EB</color>
+    
+</resources>
