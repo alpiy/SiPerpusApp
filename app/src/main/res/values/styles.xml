@@ -1,14 +1,9 @@
 <resources>
 
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:actionBarStyle">@style/SplashTheme.ActionBar</item>
-        <item name="android:windowFullscreen">true</item>
-        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryDark">@color/black</item>
     </style>
 
-    <style name="SplashTheme.ActionBar" parent="@style/Widget.AppCompat.ActionBar.CompactMenu">
-        <item name="android:visibility">gone</item>
-    </style>
 
 </resources>
