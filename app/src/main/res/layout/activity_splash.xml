@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-    tools:context=".SplashActivity"
+    tools:context=".activity.SplashActivity"
     android:background="@color/hijau"
     android:orientation="horizontal">
 

@@ -39,7 +39,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:id="@+id/book_title"
+                        android:id="@+id/tittle"
                         android:text=" Judul Buku"/>
                 </LinearLayout>
                 <LinearLayout
@@ -67,7 +67,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/realease_date"
+                        android:id="@+id/date"
                         android:text="Tahun Rilis "/>
                 </LinearLayout>
                 <LinearLayout
@@ -82,13 +82,13 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="20dp"
-                            android:id="@+id/update_at"
+                            android:id="@+id/btnUpdate_b"
                             android:text="UPDATE"
                             android:backgroundTint="@color/hijau"/>
                         <Button
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:id="@+id/delete_at"
+                            android:id="@+id/btnDelete_b"
                             android:text="DELETE"
                             android:layout_marginRight="20dp"
                             android:layout_alignParentRight="true"

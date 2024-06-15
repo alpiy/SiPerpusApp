@@ -4,16 +4,19 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".member.AddMemberActivity">
+    tools:context=".member.UpdateAddMemberActivity">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ADD"
+        android:text="MEMBER"
         android:textSize="25dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
         android:layout_margin="20dp"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/mFullname"
         android:hint="Nama Lengkap"
         android:background="@drawable/rounded_corners"
         android:layout_margin="20dp"
@@ -21,6 +24,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/mGender"
         android:hint="Jenis Kelamin"
         android:background="@drawable/rounded_corners"
         android:layout_margin="20dp"
@@ -28,6 +32,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/mAddress"
         android:hint="Alamat"
         android:background="@drawable/rounded_corners"
         android:layout_margin="20dp"
@@ -52,12 +57,11 @@
             android:layout_marginBottom="10dp"
             android:background="@color/putih">
             <ImageButton
-                android:id="@+id/profile_pict"
+                android:id="@+id/mPicture_pict"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:src="@drawable/add"
-                android:scaleType="centerInside"
-                />
+                android:scaleType="centerInside"/>
         </RelativeLayout>
     </LinearLayout>
     <RelativeLayout
@@ -66,7 +70,8 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TAMBAH"
+            android:id="@+id/btnAction_m"
+            android:text="ADD"
             android:layout_centerInParent="true"
             android:backgroundTint="@color/hijau"/>
     </RelativeLayout>

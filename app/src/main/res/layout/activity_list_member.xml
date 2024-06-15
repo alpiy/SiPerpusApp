@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    xmlns:tools="http://schemas.android.com/tools"
     tools:context=".member.ListMemberActivity">
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,12 +19,14 @@
                 android:layout_height="wrap_content"
                 android:text="MEMBER"
                 android:textSize="25dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
                 android:layout_margin="20dp"/>
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
                 <Button
-                    android:id="@+id/btnTambah"
+                    android:id="@+id/btnAdd_m"
                     android:text="ADD"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -42,7 +43,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/rvCategory"
+        android:id="@+id/listMember"
         tools:listitem="@layout/list_member"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager">
     </androidx.recyclerview.widget.RecyclerView>

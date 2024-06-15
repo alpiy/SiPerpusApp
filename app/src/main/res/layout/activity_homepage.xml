@@ -27,55 +27,56 @@
             android:layout_alignParentRight="true"
             android:layout_marginRight="30dp"/>
     </RelativeLayout>
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        android:padding="40dp"
         android:orientation="vertical">
+
         <Button
             android:id="@+id/manage_buku"
             android:layout_width="250dp"
             android:layout_height="70dp"
-            android:layout_marginTop="100dp"
-            android:layout_marginLeft="80dp"
-            android:layout_marginRight="20dp"
+            android:background="@drawable/rounded_corners"
+            android:layout_centerHorizontal="true"
+            android:padding="10dp"
+            android:layout_marginBottom="50dp"
             android:text="Manage Book"
-            android:textSize="20dp"
-            android:backgroundTint="#88AB8E"
-            android:layout_centerHorizontal="true"/>
+            android:textSize="20dp" />
         <Button
             android:id="@+id/return_buku"
             android:layout_width="250dp"
             android:layout_height="70dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginLeft="80dp"
-            android:layout_marginRight="20dp"
+            android:layout_below="@id/manage_buku"
+            android:layout_centerHorizontal="true"
+            android:padding="10dp"
+            android:layout_marginBottom="50dp"
             android:text="Return Book"
             android:textSize="20dp"
-            android:backgroundTint="#88AB8E"
-            android:layout_centerHorizontal="true"/>
+            android:background="@drawable/rounded_corners"/>
 
         <Button
             android:id="@+id/rent_buku"
             android:layout_width="250dp"
             android:layout_height="70dp"
+            android:layout_below="@id/return_buku"
             android:layout_centerHorizontal="true"
-            android:layout_marginLeft="80dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginRight="20dp"
-            android:backgroundTint="#88AB8E"
+            android:padding="10dp"
+            android:layout_marginBottom="50dp"
+            android:background="@drawable/rounded_corners"
             android:text="Rent Book"
             android:textSize="20dp"/>
 
         <Button
-            android:id="@+id/member"
+            android:id="@+id/manage_member"
             android:layout_width="250dp"
             android:layout_height="70dp"
+            android:layout_below="@id/rent_buku"
             android:layout_centerHorizontal="true"
-            android:layout_marginLeft="80dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginRight="20dp"
-            android:backgroundTint="#88AB8E"
+            android:padding="10dp"
+            android:background="@drawable/rounded_corners"
             android:text="Member"
             android:textSize="20dp"/>
-    </LinearLayout>
+    </RelativeLayout>
 </LinearLayout>

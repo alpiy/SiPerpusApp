@@ -4,31 +4,36 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".member.UpdateMemberActivity">
+    tools:context=".buku.UpdateAddBukuActivity">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="UPDATE"
+        android:text="BUKU"
         android:textSize="25dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
         android:layout_margin="20dp"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nama Lengkap"
+        android:id="@+id/bTittle"
+        android:hint="Judul Buku"
         android:background="@drawable/rounded_corners"
         android:layout_margin="20dp"
         android:padding="10dp"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Jenis Kelamin"
+        android:id="@+id/bAuthor"
+        android:hint="Nama Author"
         android:background="@drawable/rounded_corners"
         android:layout_margin="20dp"
         android:padding="10dp"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Alamat"
+        android:id="@+id/bDate"
+        android:hint="Tahun Rilis"
         android:background="@drawable/rounded_corners"
         android:layout_margin="20dp"
         android:padding="10dp"/>
@@ -51,15 +56,12 @@
             android:layout_marginLeft="10dp"
             android:layout_marginBottom="10dp"
             android:background="@color/putih">
-            <Button
+            <ImageButton
+                android:id="@+id/bCover"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:backgroundTint="@color/putih"/>
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/add"
-                android:layout_centerInParent="true"/>
+                android:src="@drawable/add"
+                android:scaleType="centerInside"/>
         </RelativeLayout>
     </LinearLayout>
     <RelativeLayout
@@ -68,7 +70,8 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="UPDATE"
+            android:id="@+id/btnAction_b"
+            android:text="ADD"
             android:layout_centerInParent="true"
             android:backgroundTint="@color/hijau"/>
     </RelativeLayout>
