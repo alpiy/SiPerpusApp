@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".member.ListMemberActivity">
+    tools:context=".buku.ListBukuActivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,7 +17,7 @@
             <TextView
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
-                android:text="MEMBER"
+                android:text="RENT BOOK"
                 android:textSize="25dp"
                 android:textStyle="bold"
                 android:textColor="@color/black"
@@ -27,7 +27,7 @@
                 android:layout_height="match_parent">
 
                 <Button
-                    android:id="@+id/btnAdd_m"
+                    android:id="@+id/btnAdd_rbn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
@@ -35,17 +35,13 @@
                     android:text="ADD" />
             </RelativeLayout>
         </LinearLayout>
-        <androidx.appcompat.widget.SearchView
+
+        <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:background="@drawable/search_background"
-            android:layout_margin="20dp"/>
+            android:layout_height="match_parent"
+            android:id="@+id/listBook"
+            tools:listitem="@layout/list_rent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager">
+        </androidx.recyclerview.widget.RecyclerView>
     </LinearLayout>
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/listMember"
-        tools:listitem="@layout/list_member"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager">
-    </androidx.recyclerview.widget.RecyclerView>
 </LinearLayout>
