@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
 
     <application
         android:allowBackup="true"
@@ -32,6 +34,8 @@
         <activity
             android:name=".buku.ListBukuActivity"
             android:exported="false" />
+        <activity android:name=".buku.UpdateAddBukuActivity"
+            android:exported="false"/>
         <activity
             android:name=".member.ListMemberActivity"
             android:exported="false" />

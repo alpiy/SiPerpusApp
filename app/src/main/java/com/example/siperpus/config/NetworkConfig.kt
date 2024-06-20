@@ -29,4 +29,12 @@ class NetworkConfig {
     fun getServiceLogin(): LoginService {
         return getRetrofit().create(LoginService::class.java)
     }
+    val instance: ApiService by lazy {
+        val retrofit = Retrofit.Builder()
+            .baseUrl(BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+
+        retrofit.create(ApiService::class.java)
+    }
 }
