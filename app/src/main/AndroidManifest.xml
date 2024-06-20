@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_book"
-        android:roundIcon="@mipmap/ic_book"
-        android:networkSecurityConfig="@xml/network"
         android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network"
+        android:roundIcon="@mipmap/ic_book"
         android:supportsRtl="true"
-        android:theme="@style/SplashScreenTheme"
+        android:theme="@style/Base.Theme.SiPerpus"
         tools:targetApi="31">
         <activity
             android:name=".activity.SplashActivity"
@@ -31,13 +31,19 @@
         <activity
             android:name=".activity.LoginActivity"
             android:exported="false" />
+
         <activity
             android:name=".buku.ListBukuActivity"
             android:exported="false" />
-        <activity android:name=".buku.UpdateAddBukuActivity"
-            android:exported="false"/>
+        <activity
+            android:name=".buku.UpdateAddBukuActivity"
+            android:exported="false" />
         <activity
             android:name=".member.ListMemberActivity"
             android:exported="false" />
+        <activity
+            android:name=".member.UpdateAddMemberActivity"
+            android:exported="false" />
     </application>
+
 </manifest>
