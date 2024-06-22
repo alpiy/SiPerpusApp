@@ -18,16 +18,13 @@ class RentBookActivity: AppCompatActivity(), OnClickListener {
         binding = ActivityRentBookBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.btnAddRbn.setOnClickListener(this)
+
 
     }
 
     override fun onClick(v: View?) {
-        when(v?.getId()){
-            R.id.btnAdd_rbn -> {
-                val intentUpdate = Intent(this@RentBookActivity, UpdateAddRentBook::class.java)
-                startActivity(intentUpdate)
-            }
-        }
+
     }
+
+
 }

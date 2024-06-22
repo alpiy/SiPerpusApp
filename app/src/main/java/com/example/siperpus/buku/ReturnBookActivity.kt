@@ -17,16 +17,13 @@ class ReturnBookActivity : AppCompatActivity(), OnClickListener {
         binding = ActivityReturnBookBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.btnAddRb.setOnClickListener(this)
+
 
     }
 
     override fun onClick(v: View?) {
         when(v?.getId()){
-            R.id.btnAdd_rb -> {
-                val intentUpdate = Intent(this@ReturnBookActivity, UpdateAddReturnBook::class.java)
-                startActivity(intentUpdate)
-            }
+
         }
     }
 }
