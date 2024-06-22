@@ -19,11 +19,6 @@
             android:background="@color/orenmuda"
             android:padding="8dp"
             android:orientation="horizontal">
-             <ImageView
-                android:id="@+id/cover_return"
-                android:layout_width="100dp"
-                android:layout_height="159dp"
-                android:background="@color/grey"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -35,12 +30,12 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Judul :"/>
+                        android:text="Nama :"/>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:id="@+id/tittle"
-                        android:text=" Judul Buku"/>
+                        android:id="@+id/rnmember"
+                        android:text=" Nama Member"/>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -49,12 +44,12 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Author :"/>
+                        android:text="Buku :"/>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:id="@+id/author"
-                        android:text=" Nama Author"/>
+                        android:id="@+id/rnbuku"
+                        android:text=" Nama Buku"/>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -63,12 +58,26 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Tahun : "/>
+                        android:text="Tanggal : "/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/date"
-                        android:text="Tahun Rilis "/>
+                        android:id="@+id/rntanggal"
+                        android:text="Tanggal Return "/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_margin="5dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Waktu : "/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/rnwaktu"
+                        android:text="Waktu Return "/>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -82,7 +91,7 @@
                         <Button
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:id="@+id/btnUpdate_c"
+                            android:id="@+id/btnUpdate_rnl"
                             android:text="UPDATE"
                             android:layout_marginRight="20dp"
                             android:layout_alignParentRight="true"

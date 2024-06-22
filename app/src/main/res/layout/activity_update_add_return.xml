@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".buku.ReturnBookActivity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Return Buku"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_margin="20dp"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rnTittle"
+        android:hint="Nama Member"
+        android:background="@drawable/rounded_corners"
+        android:layout_margin="20dp"
+        android:padding="10dp"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rnAuthor"
+        android:hint="Nama Buku"
+        android:background="@drawable/rounded_corners"
+        android:layout_margin="20dp"
+        android:padding="10dp"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rnDate"
+        android:hint="Tahun Rental"
+        android:background="@drawable/rounded_corners"
+        android:layout_margin="20dp"
+        android:padding="10dp"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rnDate1"
+        android:hint="Waktu Rental"
+        android:background="@drawable/rounded_corners"
+        android:layout_margin="20dp"
+        android:padding="10dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnAction_rn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:backgroundTint="@color/hijau"
+            android:layout_margin="900dp"
+            android:text="ADD" />
+    </RelativeLayout>
+</LinearLayout>
