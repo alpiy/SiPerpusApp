@@ -8,6 +8,8 @@ import android.view.View.OnClickListener
 import android.widget.Button
 import com.example.siperpus.R
 import com.example.siperpus.buku.ListBukuActivity
+import com.example.siperpus.buku.RentBookActivity
+import com.example.siperpus.buku.ReturnBookActivity
 import com.example.siperpus.config.SharedPrafManager
 import com.example.siperpus.databinding.ActivityHomepageBinding
 import com.example.siperpus.member.ListMemberActivity
@@ -35,12 +37,12 @@ class HomepageActivity : AppCompatActivity(), OnClickListener {
             }
 
             R.id.return_buku -> {
-                val intentReturn = Intent(this@HomepageActivity, ListBukuActivity::class.java)
+                val intentReturn = Intent(this@HomepageActivity, ReturnBookActivity::class.java)
                 startActivity(intentReturn)
             }
 
             R.id.rent_buku -> {
-                val intentRent = Intent(this@HomepageActivity, ListBukuActivity::class.java)
+                val intentRent = Intent(this@HomepageActivity, RentBookActivity::class.java)
                 startActivity(intentRent)
             }
 

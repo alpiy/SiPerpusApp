@@ -14,7 +14,7 @@
         android:networkSecurityConfig="@xml/network"
         android:roundIcon="@mipmap/ic_book"
         android:supportsRtl="true"
-        android:theme="@style/Base.Theme.SiPerpus"
+        android:theme="@style/SplashScreenTheme"
         tools:targetApi="31">
         <activity
             android:name=".activity.SplashActivity"
@@ -44,6 +44,11 @@
         <activity
             android:name=".member.UpdateAddMemberActivity"
             android:exported="false" />
+        <activity android:name=".buku.RentBookActivity"
+            android:exported="false"/>
+        <activity android:name=".buku.ReturnBookActivity"
+            android:exported="false"/>/
+
     </application>
 
 </manifest>

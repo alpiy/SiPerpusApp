@@ -67,12 +67,13 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <Button
+            android:id="@+id/btnAction_m"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/btnAction_m"
-            android:text="ADD"
             android:layout_centerInParent="true"
-            android:backgroundTint="@color/hijau"/>
+            android:backgroundTint="@color/hijau"
+            android:text="ADD" />
     </RelativeLayout>
 </LinearLayout>
