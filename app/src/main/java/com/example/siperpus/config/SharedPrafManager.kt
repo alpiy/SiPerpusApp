@@ -3,34 +3,32 @@ package com.example.siperpus.config
 import android.content.Context
 import android.content.SharedPreferences
 
-class SharedPrafManager(context: Context) {
-    private val PREFS_NAME = "sharedpref1234"
-    private val sharedPref: SharedPreferences
-    val editor:SharedPreferences.Editor
+object SharedPrefManager {
+    private const val PREF_NAME = "user_session"
+    private const val MODE = Context.MODE_PRIVATE
+    private lateinit var preferences: SharedPreferences
 
-    init {
-        sharedPref = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
-        editor =sharedPref.edit()
+    fun init(context: Context) {
+        preferences = context.getSharedPreferences(PREF_NAME, MODE)
     }
 
-    fun put(key: String, value: Any) {
-        when(value) {
-            is String -> editor.putString(key, value)
-            is Boolean -> editor.putBoolean(key, value)
-            is Int -> editor.putInt(key, value)
-        }
-        editor.apply()
+    fun put(key: String, value: String) {
+        preferences.edit().putString(key, value).apply()
     }
 
-    fun getBoolean(key: String): Boolean {
-        return sharedPref.getBoolean(key,false)
+    fun put(key: String, value: Boolean) {
+        preferences.edit().putBoolean(key, value).apply()
     }
 
     fun getString(key: String): String? {
-        return sharedPref.getString(key,null)
+        return preferences.getString(key, null)
+    }
+
+    fun getBoolean(key: String): Boolean {
+        return preferences.getBoolean(key, false)
     }
 
     fun clear() {
-        editor.clear().apply()
+        preferences.edit().clear().apply()
     }
 }

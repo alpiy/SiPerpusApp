@@ -1,7 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    id ("kotlin-kapt")  // Tambahkan ini
+    id ("kotlin-kapt")
     id ("dagger.hilt.android.plugin")
     id("com.google.gms.google-services")
 }
@@ -59,7 +59,7 @@ dependencies {
     //okhttp
     implementation("com.squareup.okhttp3:okhttp")
     implementation("com.squareup.okhttp3:okhttp:4.11.0")
-    implementation(platform("com.squareup.okhttp3:okhttp-bom:4.11.0"))
+//    implementation (platform()("com.squareup.okhttp3:okhttp-bom:4.11.0"))
     implementation("com.squareup.okhttp3:logging-interceptor:4.9.3")
 
     //library
@@ -67,8 +67,10 @@ dependencies {
     implementation("androidx.cardview:cardview:1.0.0")
     implementation ( "com.squareup.picasso:picasso:2.71828")
 
-    implementation ("com.google.dagger:hilt-android:2.44")
-    kaptAndroidTest ("com.google.dagger:hilt-android-compiler:2.44")
+    implementation ("com.google.dagger:hilt-android:2.48")
+    kaptAndroidTest ("com.google.dagger:hilt-android-compiler:2.48")
+    kapt ("com.google.dagger:hilt-android-compiler:2.48")
+    androidTestImplementation ("com.google.dagger:hilt-android-testing:2.48")
 
 
 }
