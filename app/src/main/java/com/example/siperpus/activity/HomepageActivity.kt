@@ -13,15 +13,22 @@ import com.example.siperpus.buku.ReturnBookActivity
 import com.example.siperpus.config.SharedPrafManager
 import com.example.siperpus.databinding.ActivityHomepageBinding
 import com.example.siperpus.member.ListMemberActivity
+import com.google.firebase.auth.FirebaseAuth
+import dagger.hilt.android.AndroidEntryPoint
+
 
 class HomepageActivity : AppCompatActivity(), OnClickListener {
     private lateinit var binding: ActivityHomepageBinding
+    companion object{
+        lateinit var auth: FirebaseAuth
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomepageBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        auth = FirebaseAuth.getInstance()
         binding.manageBuku.setOnClickListener(this)
         binding.returnBuku.setOnClickListener(this)
         binding.rentBuku.setOnClickListener(this)

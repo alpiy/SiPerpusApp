@@ -10,6 +10,8 @@ import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.siperpus.R
+import dagger.hilt.android.AndroidEntryPoint
+
 
 class UpdateAddMemberActivity : AppCompatActivity(){
     var isiFileUploaded = false

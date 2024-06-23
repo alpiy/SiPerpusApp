@@ -35,7 +35,7 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class ListBukuActivity : AppCompatActivity(), OnClickListener{
     private lateinit var binding : ActivityListBukuBinding
-    @Inject
+
     lateinit var apiService: ApiService
     private lateinit var recyclerView: RecyclerView
 //    private val ADD_BUKU_REQUEST = 1

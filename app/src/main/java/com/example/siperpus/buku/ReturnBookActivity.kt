@@ -8,6 +8,8 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.siperpus.R
 import com.example.siperpus.databinding.ActivityRentBookBinding
 import com.example.siperpus.databinding.ActivityReturnBookBinding
+import dagger.hilt.android.AndroidEntryPoint
+
 
 class ReturnBookActivity : AppCompatActivity(), OnClickListener {
     private lateinit var binding : ActivityReturnBookBinding

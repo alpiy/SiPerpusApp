@@ -9,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.siperpus.R
 import com.example.siperpus.databinding.ActivityListBukuBinding
 import com.example.siperpus.databinding.ActivityRentBookBinding
+import dagger.hilt.android.AndroidEntryPoint
+
 
 class RentBookActivity: AppCompatActivity(), OnClickListener {
     private lateinit var binding : ActivityRentBookBinding

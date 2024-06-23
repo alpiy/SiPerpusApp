@@ -8,6 +8,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.siperpus.R
 import com.example.siperpus.buku.Buku
+import dagger.hilt.android.AndroidEntryPoint
+
 
 class BukuAdapter(private val bukulist: List<Buku>) : RecyclerView.Adapter<BukuAdapter.BukuViewHolder>() {
 

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "863349011365",
+    "project_id": "siperpus-42d14",
+    "storage_bucket": "siperpus-42d14.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:863349011365:android:25af51dc7aeee983602e4c",
+        "android_client_info": {
+          "package_name": "com.example.siperpus"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGWNMPGQ6dDZSb89ncuabw9RXOV5rDYrI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

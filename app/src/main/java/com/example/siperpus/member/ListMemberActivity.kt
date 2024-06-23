@@ -8,6 +8,8 @@ import com.example.siperpus.R
 import com.example.siperpus.buku.UpdateAddBukuActivity
 import com.example.siperpus.databinding.ActivityListBukuBinding
 import com.example.siperpus.databinding.ActivityListMemberBinding
+import dagger.hilt.android.AndroidEntryPoint
+
 
 class ListMemberActivity : AppCompatActivity(), OnClickListener{
     private lateinit var binding : ActivityListMemberBinding
