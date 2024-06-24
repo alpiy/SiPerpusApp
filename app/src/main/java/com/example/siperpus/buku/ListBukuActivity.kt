@@ -5,6 +5,7 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.View.OnClickListener
 import android.widget.Button
@@ -16,6 +17,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.siperpus.R
 import com.example.siperpus.adapter.BukuAdapter
+import com.example.siperpus.config.ApiClient
 import com.example.siperpus.config.ApiService
 import com.example.siperpus.config.NetworkConfig
 import com.example.siperpus.databinding.ActivityListBukuBinding
@@ -35,24 +37,26 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class ListBukuActivity : AppCompatActivity(), OnClickListener{
     private lateinit var binding : ActivityListBukuBinding
-    @Inject
-    lateinit var apiService: ApiService
-    private lateinit var recyclerView: RecyclerView
-//    private val ADD_BUKU_REQUEST = 1
-//    private  val bukuList = mutableListOf<Buku>()
-//    private lateinit var bukuAdapter: BukuAdapter
+    private lateinit var adapter: BukuAdapter
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityListBukuBinding.inflate(layoutInflater)
         setContentView(binding.root)
-//        loadBukuData()
+
+        adapter = BukuAdapter(this@ListBukuActivity, arrayListOf() )
+
+        binding.listBook.adapter = adapter
+        binding.listBook.setHasFixedSize(true)
+         remoteGetBook()
 
         binding.btnTambahB.setOnClickListener(this)
-        recyclerView = findViewById(R.id.listBook)
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        fetchBooks()
-//        binding.listBook.setOnClickListener(this)
+//        recyclerView = findViewById(R.id.listBook)
+//        recyclerView.layoutManager = LinearLayoutManager(this)
+//        fetchBooks()
+////        binding.listBook.setOnClickListener(this)
 //        val recyclerViewBuku: RecyclerView = findViewById(R.id.listBook)
 //        recyclerViewBuku.layoutManager = LinearLayoutManager(this)
 //        bukuAdapter = BukuAdapter(bukuList)
@@ -69,25 +73,51 @@ class ListBukuActivity : AppCompatActivity(), OnClickListener{
             }
         }
     }
-    private fun fetchBooks() {
-        val call = apiService.getBuku()
-        call.enqueue(object : Callback<List<Buku>> {
-            override fun onResponse(call: Call<List<Buku>>, response: Response<List<Buku>>) {
-                if (!response.isSuccessful) {
-                    Toast.makeText(this@ListBukuActivity, "Code: ${response.code()}", Toast.LENGTH_SHORT).show()
-                    return
+
+    fun remoteGetBook(){
+        ApiClient.apiService.getBuku().enqueue(object : Callback<ArrayList<Buku>>{
+            override fun onResponse(
+                call: Call<ArrayList<Buku>>,
+                response: Response<ArrayList<Buku>>
+            ) {
+                if(response.isSuccessful){
+                    val data = response.body()
+                    setDatatoAdapter(data!!)
                 }
-
-                val books = response.body()!!
-                recyclerView.adapter = BukuAdapter(books)
             }
 
-            override fun onFailure(call: Call<List<Buku>>, t: Throwable) {
-                Toast.makeText(this@ListBukuActivity, t.message, Toast.LENGTH_SHORT).show()
+            override fun onFailure(call: Call<ArrayList<Buku>>, t: Throwable) {
+                Log.d("Errorr",""+ t.stackTraceToString())
             }
+
         })
     }
+
+    fun setDatatoAdapter(data: ArrayList<Buku>){
+        adapter.setData(data)
+    }
 }
+
+
+//    private fun fetchBooks() {
+//        val call = apiService.getBuku()
+//        call.enqueue(object : Callback<List<Buku>> {
+//            override fun onResponse(call: Call<List<Buku>>, response: Response<List<Buku>>) {
+//                if (!response.isSuccessful) {
+//                    Toast.makeText(this@ListBukuActivity, "Code: ${response.code()}", Toast.LENGTH_SHORT).show()
+//                    return
+//                }
+//
+//                val books = response.body()!!
+//                recyclerView.adapter = BukuAdapter(books)
+//            }
+//
+//            override fun onFailure(call: Call<List<Buku>>, t: Throwable) {
+//                Toast.makeText(this@ListBukuActivity, t.message, Toast.LENGTH_SHORT).show()
+//            }
+//        })
+//    }
+//}
 
 
 
@@ -120,23 +150,4 @@ class ListBukuActivity : AppCompatActivity(), OnClickListener{
 //        }
 //    }
 
-//    private fun displayBukuData(bukuList: List<Buku>) {
-//        val listBukuLayout = findViewById<LinearLayout>(R.id.listBook)
 //
-//        for (buku in bukuList) {
-//            val bukuView = layoutInflater.inflate(R.layout.list_book, null)
-//
-//            val textViewJudul = bukuView.findViewById<TextView>(R.id.tittle)
-//            val textViewAuthor = bukuView.findViewById<TextView>(R.id.author)
-//            val textViewTahun = bukuView.findViewById<TextView>(R.id.date)
-//            val imageViewCover = bukuView.findViewById<ImageView>(R.id.cover_book)
-//
-//            textViewJudul.text = buku.judul
-//            textViewAuthor.text = buku.author
-//            textViewTahun.text = buku.tahunRilis
-//            Picasso.get().load(buku.imageUri).into(imageViewCover)
-//
-//            listBukuLayout.addView(bukuView)
-//        }
-//    }
-
