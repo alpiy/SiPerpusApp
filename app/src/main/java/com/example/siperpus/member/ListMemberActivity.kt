@@ -8,16 +8,13 @@ import androidx.activity.viewModels
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.siperpus.R
-import com.example.siperpus.adapter.StoriesAdapter
 import com.example.siperpus.adapter.adapterMember
 import com.example.siperpus.buku.UpdateAddBukuActivity
-import com.example.siperpus.config.createRetrofitService
 import com.example.siperpus.databinding.ActivityListMemberBinding
 
 
 class ListMemberActivity : AppCompatActivity(), OnClickListener {
     private lateinit var binding: ActivityListMemberBinding
-    private val apiService by lazy { createRetrofitService() }
     private val viewModel by viewModels<MemberViewModel> {
         MemberViewModelFactory.getInstance()
     }
