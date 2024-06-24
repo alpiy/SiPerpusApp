@@ -44,23 +44,13 @@
             android:layout_marginBottom="25dp"
             android:text="Manage Book"
             android:textSize="20dp" />
-        <Button
-            android:id="@+id/return_buku"
-            android:layout_width="250dp"
-            android:layout_height="70dp"
-            android:layout_below="@id/manage_buku"
-            android:layout_centerHorizontal="true"
-            android:padding="10dp"
-            android:layout_marginBottom="25dp"
-            android:text="Return Book"
-            android:textSize="20dp"
-            android:background="@drawable/rounded_corners"/>
+
 
         <Button
             android:id="@+id/rent_buku"
             android:layout_width="250dp"
             android:layout_height="70dp"
-            android:layout_below="@id/return_buku"
+            android:layout_below="@id/manage_buku"
             android:layout_centerHorizontal="true"
             android:padding="10dp"
             android:layout_marginBottom="25dp"
