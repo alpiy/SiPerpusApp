@@ -11,14 +11,14 @@ import retrofit2.http.GET
 
 interface ApiService {
     @GET("get-all-book")
-    fun getBuku(): Call<List<Buku>>
+    fun getBuku(): Call<ArrayList<Buku>>
 
     @GET("users")
     fun getMember(): Call<ArrayList<Member>>
 }
 fun createRetrofitService(): ApiService {
     val gson = GsonBuilder()
-        .registerTypeAdapter(object : TypeToken<List<Buku>>() {}.type, MyModelDeserializer())
+        .registerTypeAdapter(object : TypeToken<ArrayList<Buku>>() {}.type, MyModelDeserializer())
         .create()
 
     val retrofit = Retrofit.Builder()

@@ -6,16 +6,21 @@ import com.google.gson.JsonDeserializer
 import com.google.gson.JsonElement
 import java.lang.reflect.Type
 
-class MyModelDeserializer : JsonDeserializer<ArrayList<Buku>> {
-    override fun deserialize(json: JsonElement, typeOfT: Type, context: JsonDeserializationContext): ArrayList<Buku> {
-        val arrayList = ArrayList<Buku>()
-        if (json.isJsonArray) {
+class MyModelDeserializer : JsonDeserializer<List<Buku>> {
+    override fun deserialize(json: JsonElement, typeOfT: Type, context: JsonDeserializationContext): List<Buku> {
+        val resultList = mutableListOf<Buku>()
+        if (json.isJsonObject) {
+            // Jika respons JSON adalah objek tunggal, kita bisa memprosesnya di sini
+            val myModel = context.deserialize<Buku>(json, Buku::class.java)
+            resultList.add(myModel)
+        } else if (json.isJsonArray) {
+            // Jika respons JSON adalah array, iterasi setiap elemen dan tambahkan ke resultList
             json.asJsonArray.forEach { element ->
-                arrayList.add(context.deserialize(element, Buku::class.java))
+                val myModel = context.deserialize<Buku>(element, Buku::class.java)
+                resultList.add(myModel)
             }
-        } else {
-            arrayList.add(context.deserialize(json, Buku::class.java))
         }
-        return arrayList
+
+        return resultList
     }
 }

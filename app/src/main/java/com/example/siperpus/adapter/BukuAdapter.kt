@@ -11,7 +11,6 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.siperpus.R
 import com.example.siperpus.buku.Buku
-import dagger.hilt.android.AndroidEntryPoint
 
 
 class BukuAdapter( private val context:Context, private val datalist: ArrayList<Buku>) : RecyclerView.Adapter<BukuAdapter.BukuViewHolder>() {
@@ -41,7 +40,7 @@ class BukuAdapter( private val context:Context, private val datalist: ArrayList<
 
     }
 
-    fun setData(data: ArrayList<Buku>){
+    fun setData(data: List<Buku>){
         datalist.clear()
         datalist.addAll(data)
         notifyDataSetChanged()
