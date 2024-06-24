@@ -20,6 +20,7 @@ import com.example.siperpus.adapter.BukuAdapter
 import com.example.siperpus.config.ApiClient
 import com.example.siperpus.config.ApiService
 import com.example.siperpus.config.NetworkConfig
+import com.example.siperpus.config.createRetrofitService
 import com.example.siperpus.databinding.ActivityListBukuBinding
 import com.squareup.picasso.Picasso
 import dagger.hilt.android.AndroidEntryPoint
@@ -38,6 +39,7 @@ import javax.inject.Inject
 class ListBukuActivity : AppCompatActivity(), OnClickListener{
     private lateinit var binding : ActivityListBukuBinding
     private lateinit var adapter: BukuAdapter
+    private val apiService by lazy { createRetrofitService() }
 
 
 

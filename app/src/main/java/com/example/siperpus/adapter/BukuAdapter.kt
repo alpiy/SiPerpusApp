@@ -31,12 +31,12 @@ class BukuAdapter( private val context:Context, private val datalist: ArrayList<
     override fun getItemCount(): Int = datalist.size
 
     override fun onBindViewHolder(holder: BukuViewHolder, position: Int) {
-        holder.textViewJudul.text = datalist.get(position).judul
+        holder.textViewJudul.text = datalist.get(position).book_title
         holder.textViewAuthor.text = datalist.get(position).author
-        holder.textViewTahun.text = datalist.get(position).tahunRilis
-        holder.imageViewCover.setImageURI(datalist.get(position).imageUri)
+        holder.textViewTahun.text = datalist.get(position).release_date
+//        holder.imageViewCover.setImageURI(datalist.get(position).imageUri)
         holder.cvBook.setOnClickListener{
-            Toast.makeText(context,""+datalist.get(position).judul,Toast.LENGTH_SHORT).show()
+            Toast.makeText(context,""+datalist.get(position).book_title,Toast.LENGTH_SHORT).show()
         }
 
     }
