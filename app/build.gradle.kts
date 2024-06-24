@@ -72,5 +72,7 @@ dependencies {
     kapt ("com.google.dagger:hilt-android-compiler:2.48")
     androidTestImplementation ("com.google.dagger:hilt-android-testing:2.48")
 
+    implementation("com.firebaseui:firebase-ui-auth:7.2.0")
+
 
 }
