@@ -5,12 +5,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.View.OnClickListener
-import android.widget.Button
 import android.widget.Toast
 import com.example.siperpus.R
 import com.example.siperpus.buku.ListBukuActivity
 import com.example.siperpus.buku.RentBookActivity
-import com.example.siperpus.buku.ReturnBookActivity
 import com.example.siperpus.config.Constant
 import com.example.siperpus.config.SharedPrefManager
 
@@ -38,7 +36,6 @@ class HomepageActivity : AppCompatActivity(), OnClickListener {
         val isLoggedIn = SharedPrefManager.getBoolean(Constant.PREF_IS_LOGIN)
 
         binding.manageBuku.setOnClickListener(this)
-        binding.returnBuku.setOnClickListener(this)
         binding.rentBuku.setOnClickListener(this)
         binding.manageMember.setOnClickListener(this)
         binding.logout.setOnClickListener(this)
@@ -59,11 +56,6 @@ class HomepageActivity : AppCompatActivity(), OnClickListener {
             R.id.manage_buku -> {
                 val intentBook = Intent(this@HomepageActivity, ListBukuActivity::class.java)
                 startActivity(intentBook)
-            }
-
-            R.id.return_buku -> {
-                val intentReturn = Intent(this@HomepageActivity, ReturnBookActivity::class.java)
-                startActivity(intentReturn)
             }
 
             R.id.rent_buku -> {

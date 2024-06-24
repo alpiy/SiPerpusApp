@@ -18,9 +18,13 @@ data class Buku(
     @SerializedName("author")
     val author  : String,
     @SerializedName("release_date")
-    val release_date  : String?
-//    @SerializedName("book_pict")
-//    val imageUri    : Uri
+    val release_date  : String?,
+    @SerializedName("created_at")
+    val created_at : String?,
+    @SerializedName("updated_at")
+    val updated_at : String?,
+    @SerializedName("book_pict")
+    val imageUri    : Uri
 )
 
 

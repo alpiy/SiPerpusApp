@@ -6,7 +6,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class NetworkConfig {
-    val BASE_URL:String = ""
+    val BASE_URL:String = "https://siperpus-production.up.railway.app/api/"
     fun getInterceptor() : OkHttpClient {
         val logging = HttpLoggingInterceptor()
         logging.level = HttpLoggingInterceptor.Level.BODY
@@ -19,16 +19,7 @@ class NetworkConfig {
     }
 
     //retrofit
-    fun getRetrofit() : Retrofit {
-        return Retrofit.Builder()
-            .baseUrl(BASE_URL)
-            .client(getInterceptor())
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-    }
-    fun getServiceLogin(): LoginService {
-        return getRetrofit().create(LoginService::class.java)
-    }
+
 //    val instance: ApiService by lazy {
 //        val retrofit = Retrofit.Builder()
 //            .baseUrl(BASE_URL)

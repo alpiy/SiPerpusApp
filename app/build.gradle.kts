@@ -36,8 +36,9 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-    viewBinding{
-        enable = true
+    buildFeatures{
+        viewBinding = true
+        buildConfig = true
     }
 }
 
@@ -73,6 +74,11 @@ dependencies {
     androidTestImplementation ("com.google.dagger:hilt-android-testing:2.48")
 
     implementation("com.firebaseui:firebase-ui-auth:7.2.0")
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.7.0")
+    implementation("androidx.activity:activity-ktx:1.9.0")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
 
 
 }

@@ -16,7 +16,7 @@ object NetworkModule {
     @Singleton
     fun provideRetrofit(): Retrofit {
         return Retrofit.Builder()
-            .baseUrl("http://your-api-url/api/")
+            .baseUrl("https://siperpus-production.up.railway.app/api/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
