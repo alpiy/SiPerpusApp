@@ -79,16 +79,17 @@
             android:text="Member"
             android:textSize="20dp"/>
 
-        <ImageButton
-            android:id="@+id/button_lg"
-            android:layout_width="39dp"
-            android:layout_height="50dp"
+        <Button
+            android:id="@+id/logout"
+            android:text="LogOut"
+            android:background="@drawable/rounded_corners"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
             android:layout_below="@id/rent_buku"
             android:layout_centerInParent="true"
             android:layout_marginTop="125dp"
             android:padding="10dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/power_button" />
+            android:scaleType="centerCrop" />
 
     </RelativeLayout>
 
