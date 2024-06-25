@@ -4,33 +4,45 @@ import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.example.siperpus.R
-import dagger.hilt.android.AndroidEntryPoint
+import com.example.siperpus.databinding.ActivityUpdateAddBukuBinding
+import okhttp3.ResponseBody
+import retrofit2.Call
 
 
 class UpdateAddBukuActivity : AppCompatActivity(){
-    var isiFileUploaded = false
-    private val PICK_IMAGE_REQUEST = 1
+    private lateinit var binding:ActivityUpdateAddBukuBinding
+    private var isiFileUploaded = false
+    private val PICKIMAGEREQUEST = 1
     private val imageUri: Uri? = null
+    private val viewModel by viewModels<MainViewModel> {
+        ViewModelFactory.getInstance()
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_update_add_buku)
-
+        binding = ActivityUpdateAddBukuBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         val editTextJudulBuku = findViewById<EditText>(R.id.bTittle)
         val editTextNamaAuthor = findViewById<EditText>(R.id.bAuthor)
         val editTextTahunRilis = findViewById<EditText>(R.id.bDate)
-        val buttonUploadFile = findViewById<ImageButton>(R.id.bCover)
-        buttonUploadFile.setOnClickListener{
+        val buttonUploadFile = findViewById<ImageView>(R.id.bCover)
+        buttonUploadFile.setOnClickListener {
             openFileChooser()
-            isiFileUploaded=true}
+            isiFileUploaded = true
+        }
         val buttonAdd = findViewById<Button>(R.id.btnAction_b)
 
-        buttonAdd.setOnClickListener{
+        buttonAdd.setOnClickListener {
+            Log.d("UpdateAddBukuActivity", "Add Button clicked")
+            Toast.makeText(this, "Add Button clicked", Toast.LENGTH_SHORT).show()
             val judulBuku = editTextJudulBuku.text.toString().trim()
             val namaAuthor = editTextNamaAuthor.text.toString().trim()
             val tahunRilis = editTextTahunRilis.text.toString().trim()
@@ -53,8 +65,8 @@ class UpdateAddBukuActivity : AppCompatActivity(){
                 editTextTahunRilis.requestFocus()
                 return@setOnClickListener
             }
-            if (imageUri==null){
-                Toast.makeText(this,"File YONU",Toast.LENGTH_SHORT).show()
+            if (imageUri == null) {
+                Toast.makeText(this, "File harus diunggah", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
@@ -63,25 +75,44 @@ class UpdateAddBukuActivity : AppCompatActivity(){
                 return@setOnClickListener
             }
 
-            // Jika semua field sudah diisi dan file sudah diunggah
-            Toast.makeText(this, "Data berhasil ditambahkan", Toast.LENGTH_SHORT).show()
+            viewModel.addBook(judulBuku, namaAuthor, tahunRilis, imageUri!!, contentResolver)
+
         }
 
+        viewModel.addBookResponse.observe(this@UpdateAddBukuActivity) { response ->
+            if (response != null) {
+                Log.d("UpdateAddBukuActivity", "Book added successfully: $response")
+                Toast.makeText(this, "Data berhasil ditambahkan", Toast.LENGTH_SHORT).show()
+                setResult(Activity.RESULT_OK)
+                finish()
+            } else {
+                Log.d("UpdateAddBukuActivity", "Failed to add book")
+                Toast.makeText(this, "Gagal menambahkan data", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
-    private fun openFileChooser() {
+
+
+        private fun openFileChooser() {
         val intent = Intent()
         intent.type = "image/*"
         intent.action = Intent.ACTION_GET_CONTENT
-        startActivityForResult(intent, PICK_IMAGE_REQUEST)
+        startActivityForResult(intent, PICKIMAGEREQUEST)
     }
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == PICK_IMAGE_REQUEST && resultCode == Activity.RESULT_OK && data != null && data.data != null) {
-            val imageUri = data.data
+        if (requestCode == PICKIMAGEREQUEST && resultCode == Activity.RESULT_OK && data != null && data.data != null) {
+            var imageUri = data.data
             // Anda dapat menampilkan gambar yang dipilih di ImageButton atau ImageView
-            val imageButtonUpload = findViewById<ImageButton>(R.id.bCover)
+            val imageButtonUpload = findViewById<ImageView>(R.id.bCover)
             imageButtonUpload.setImageURI(imageUri)
+            Log.d("UpdateAddBukuActivity", "Image Uri: $imageUri")
+            Toast.makeText(this, "Image selected: $imageUri", Toast.LENGTH_SHORT).show()
+
         }
     }
-
 }
+
+
+
+

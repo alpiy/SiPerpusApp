@@ -5,6 +5,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.create
+import java.util.concurrent.TimeUnit
 
 object ApiClient{
     fun getApiService(): ApiService {
@@ -18,6 +19,17 @@ object ApiClient{
             .client(client)
             .build()
         return retrofit.create(ApiService::class.java)
+    }
+    private val okHttpClient = OkHttpClient.Builder()
+        .connectTimeout(30, TimeUnit.SECONDS)
+        .readTimeout(30, TimeUnit.SECONDS)
+        .build()
+    fun getApiClient(): Retrofit {
+        return Retrofit.Builder()
+            .baseUrl("https://siperpus-production.up.railway.app/")
+            .client(okHttpClient)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
     }
 }
 

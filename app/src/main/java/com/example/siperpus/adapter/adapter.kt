@@ -31,6 +31,8 @@ class StoriesAdapter : ListAdapter<DataItem, StoriesAdapter.MyViewHolder>(DIFF_C
                 Glide.with(root.rootView)
                     .load(user.bookPict)
                     .into(coverBook)
+
+
             }
         }
     }
