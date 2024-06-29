@@ -50,7 +50,7 @@ class ListMemberActivity : AppCompatActivity(), OnClickListener {
         when (v?.getId()) {
             R.id.btnAdd_m -> {
                 val intentUpdate =
-                    Intent(this@ListMemberActivity, UpdateAddBukuActivity::class.java)
+                    Intent(this@ListMemberActivity, UpdateAddMemberActivity::class.java)
                 startActivity(intentUpdate)
             }
         }

@@ -13,29 +13,55 @@
         android:textStyle="bold"
         android:textColor="@color/black"
         android:layout_margin="20dp"/>
-    <EditText
+    <com.google.android.material.textfield.TextInputEditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/mFullname"
         android:hint="Nama Lengkap"
         android:background="@drawable/rounded_corners"
-        android:layout_margin="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="10dp"
         android:padding="10dp"/>
-    <EditText
+    <com.google.android.material.textfield.TextInputEditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/mGender"
         android:hint="Jenis Kelamin"
         android:background="@drawable/rounded_corners"
-        android:layout_margin="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="10dp"
         android:padding="10dp"/>
-    <EditText
+    <com.google.android.material.textfield.TextInputEditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/mAddress"
         android:hint="Alamat"
         android:background="@drawable/rounded_corners"
-        android:layout_margin="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="10dp"
+        android:padding="10dp"/>
+    <com.google.android.material.textfield.TextInputEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/mPhone"
+        android:hint="Phone"
+        android:background="@drawable/rounded_corners"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="10dp"
+        android:padding="10dp"/>
+    <com.google.android.material.textfield.TextInputEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/mEmail"
+        android:hint="Email"
+        android:background="@drawable/rounded_corners"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="10dp"
         android:padding="10dp"/>
     <LinearLayout
         android:layout_width="match_parent"
@@ -51,10 +77,6 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginBottom="10dp"
             android:background="@color/putih">
             <ImageButton
                 android:id="@+id/mPicture_pict"
